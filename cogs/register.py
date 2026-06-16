@@ -16,21 +16,22 @@ class Register(commands.Cog):
         ctx: discord.ApplicationContext,
         username: str
     ):  
-        script_path = pathlib.Path(__file__).resolve()
-        parent_path = script_path.parent.parent
-        local_save = f"{parent_path}{os.sep}players.json"
+        pass
+        # script_path = pathlib.Path(__file__).resolve()
+        # parent_path = script_path.parent.parent
+        # local_save = f"{parent_path}{os.sep}players.json"
 
-        with open(local_save, "r") as file:
-            usernames = json.load(file)
+        # with open(local_save, "r") as file:
+        #     usernames = json.load(file)
 
-            if str(ctx.user.id) in list(usernames.keys()): await ctx.respond("Already registrated"); return
+        #     if str(ctx.user.id) in list(usernames.keys()): await ctx.respond("Already registrated"); return
 
-            usernames[ctx.user.id] = username.lower()
+        #     usernames[ctx.user.id] = username.lower()
 
-        with open(local_save, "w") as file:
-            json.dump(usernames, file)
+        # with open(local_save, "w") as file:
+        #     json.dump(usernames, file)
 
-        await ctx.respond(f"Added {username}")
+        # await ctx.respond(f"Added {username}")
 
 def setup(bot):
     bot.add_cog(Register(bot))
