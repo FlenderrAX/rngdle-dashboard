@@ -27,9 +27,17 @@ class Register(commands.Cog):
             with open(local_save, "r") as file:
                 data = json.load(file)
         except: data = {}
-
+        
         if guild_id not in data:
             data[guild_id] = {}
+
+        if user_id in data[guild_id]:
+            await ctx.respond("You're already registrated ! Use `/unregister` command first.", ephemeral=True)
+            return
+
+        if rngdle_username in data[guild_id].values():
+            await ctx.respond(f"The following account `{rngdle_username}` is already linked with another account!", ephemeral=True)
+            return
 
         data[guild_id][user_id] = rngdle_username
 
