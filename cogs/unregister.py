@@ -50,6 +50,5 @@ class Unregister(commands.Cog):
         await ctx.respond(data)
     
 
-
 def setup(bot):
     bot.add_cog(Unregister(bot))

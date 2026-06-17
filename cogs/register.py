@@ -21,7 +21,7 @@ class Register(commands.Cog):
 
         script_path = pathlib.Path(__file__).resolve()
         parent_path = script_path.parent.parent
-        local_save = f"{parent_path}{os.sep}players.json"
+        local_save = os.path.join(parent_path, "players.json")
 
         try:
             with open(local_save, "r") as file:

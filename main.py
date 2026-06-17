@@ -4,7 +4,7 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.get_env("RNGDLE_BOT")
+TOKEN = os.getenv("RNGDLE_BOT")
 
 bot = discord.Bot(intents=discord.Intents.all())
 
