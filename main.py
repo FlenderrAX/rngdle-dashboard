@@ -19,7 +19,8 @@ async def on_ready():
 extensions = [
     'cogs.register',
     'cogs.unregister',
-    'cogs.leaderboard'
+    'cogs.leaderboard',
+    'cogs.profile'
 ]
 
 for ext in extensions:
